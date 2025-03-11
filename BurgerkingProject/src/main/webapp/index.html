@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BurgerKing</title>
+
+<style>
+	* {
+		margin:0;
+		padding:0;
+	}
+	body{
+		background-image:url('https://mob-prd.burgerking.co.kr/images/menu/web/main/2025/01/06/ffefc938-62f3-4bc0-8a54-bad31db5d63a.png');
+	}
+	
+	h1 {
+		color: red;
+		text-align: center;
+		margin: auto;
+		font-size:300px;
+	}
+	
+	button {
+		width: 200px;
+		height: 100px;
+		padding: 10px 20px;
+	}
+	#order {
+		
+		margin-top: 20px;
+		margin: 20px;
+		font-size: 38px;
+		font-weight: bold;
+		color: white;
+		background-color: blue;
+		border-radius: 20px;
+		user-select: none;
+	}
+	#order:active{
+		background-color: green;
+	}
+	
+	
+</style>
+</head>
+
+<body>
+
+	<h1>이곳은 버거킹!</h1>
+	
+	<hr>
+	
+	<button id="order" onclick="goRequest();">주문하기</button>
+	
+	<script>
+ 	 function goRequest(){
+		 location.href = "http://127.0.0.1/bk/static/Request_Page.html";
+	 } 
+	</script>
+	
+</body>
+</html>
