@@ -1,6 +1,8 @@
 package com.kh.mcdonald.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -65,6 +67,15 @@ public class SettingController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("brand", "Mcdonald");
 		session.setAttribute("bestSeller", new Hamburger("빅맥", 6500, "Mcdonald"));
+		
+		// 숫
+		request.setAttribute("big", 10);
+		request.setAttribute("small", 3);
+		// 문자
+		request.setAttribute("str", "yap going");
+		
+		//리스트
+		request.setAttribute("list", new ArrayList());
 		
 		// 응답 뷰 위임 -> 포워딩
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/print.jsp");

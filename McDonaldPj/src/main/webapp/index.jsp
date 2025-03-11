@@ -37,8 +37,14 @@
 	 -->
 	<a href="/mcd/sc">a 태그지롱</a>
 	
+	<br><br><br>
+	<a href="include">포함포함~</a>
 	
+	<br><br><br>
+	<a href="forward">포워드 JSP로 이동</a>
 	
+	<br><br><br>
+	<a href="jstl">실과 바늘 배우기</a>
 	
 
 </body>
