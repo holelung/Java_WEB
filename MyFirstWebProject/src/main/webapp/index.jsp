@@ -4,17 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HI</title>
+<title>웰컴!</title>
+
 </head>
 <body>
-	회원가입/ 로그인을 만들어 봅시다!
 	<!-- 
 		WEB 환경에서 CRUD를 구현
+		
+		* 회원 서비스
+		로그인(R), 회원가입(C)
 	 -->
-	<div class='form-container'>
-	
-	
-	</div>
-
+	<jsp:include page="WEB-INF/views/include/header.jsp"/>
+	<jsp:include page="WEB-INF/views/include/main.jsp"/>
+	<jsp:include page="WEB-INF/views/include/footer.jsp"/>
 </body>
 </html>

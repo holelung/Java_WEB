@@ -42,7 +42,7 @@ public class JstlController extends HttpServlet {
 		request.setAttribute("message", "조회 성공");
 		
 		
-		
+		 
 		
 		
 		
