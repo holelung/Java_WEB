@@ -46,6 +46,8 @@ header {
 }
 .nav-items > li {
   padding: 5px 20px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .member-sys {
