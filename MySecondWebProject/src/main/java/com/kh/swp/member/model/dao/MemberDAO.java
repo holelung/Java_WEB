@@ -7,27 +7,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.kh.swp.member.model.dto.MemberDTO;
-import com.kh.swp.member.util.JdbcUtil;
+import com.kh.swp.util.JdbcUtil;
 
 public class MemberDAO {
 	
 	
-	static {
-		try {
-			// FullClassName = 패키지 경로부터 클래스 Name 까지 
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+	
 	
 
 	
-	public MemberDTO signin(MemberDTO member) {
+	public MemberDTO signin(Connection conn, MemberDTO member) {
 		
 		MemberDTO signinMember = null;
 		
-		Connection conn = null;
+		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
@@ -42,7 +35,7 @@ public class MemberDAO {
 					MEMBER_PW = ?
 				""";
 		try {
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+			
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getMemberId());

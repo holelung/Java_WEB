@@ -1,4 +1,4 @@
-package com.kh.swp.member.util;
+package com.kh.swp.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +8,15 @@ import java.sql.Statement;
 
 public class JdbcUtil {
 	
+	
+	static {
+		try {
+			// FullClassName = 패키지 경로부터 클래스 Name 까지 
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
 
 	public static Connection getConnect() {

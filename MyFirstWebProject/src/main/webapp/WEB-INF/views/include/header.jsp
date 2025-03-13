@@ -23,7 +23,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="/resources/css/agency.min.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/css/agency.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
   
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
