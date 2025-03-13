@@ -87,4 +87,102 @@ public class MemberDAO {
 		return result;
 	}
 	
+	
+	public int checkId(String memberId) {
+		String sql = """
+				SELECT 
+					COUNT(*)
+				FROM
+					KH_MEMBER
+				WHERE
+					MEMBER_ID = ?
+				""";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset  = null;
+		int result = 1;
+		try {
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberId);
+			
+			rset = pstmt.executeQuery();
+			
+// 			COUNT(*)로 SELECT한 경우			
+			rset.next();
+			result = rset.getInt("COUNT(*)");
+			
+			// MEMBER_ID 로 조회한 경우
+			// next()의 결과가 true/false 인지만확인하면됨
+			// 왜? 결과가 행이 0개거나 1개거나 이니깐
+//			return rset.next(); 
+		
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rset!=null) {
+					rset.close();
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				if(pstmt != null) {
+					pstmt.close();
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				if(conn != null) {
+					conn.close();
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		return result;
+	}
+	
+	public int signUp(MemberDTO member) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String sql = """
+				INSERT INTO
+					KH_MEMBER
+				VALUES (
+						?,
+						?,
+						?,
+						?,
+						DEFAULT
+					)
+				""";
+		try{
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getMemberId());
+			pstmt.setString(2, member.getMemberPw());
+			pstmt.setString(3, member.getMemberName());
+			pstmt.setString(4, member.getEmail());
+
+			return pstmt.executeUpdate();
+			
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
 }

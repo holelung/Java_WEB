@@ -38,7 +38,7 @@
 						class="form-control tooltipstered" maxlength="14"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						value="로그인 된 사용자 아이디" readonly>
+						value="${ sessionScope.loginMember.memberId }" readonly>
 						</td>
 					
 				</tr>
@@ -53,7 +53,7 @@
 						class="form-control tooltipstered" maxlength="6"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						placeholder="한글로 최대 6자" value="로그인된 사용자 이름"></td>
+						placeholder="한글로 최대 6자" value="${ sessionScope.loginMember.memberName }"></td>
 				</tr>
 				
 				<tr>
@@ -66,7 +66,7 @@
 						class="form-control tooltipstered" 
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						placeholder="ex) kh@kh.com" value="로그인된 사용자 이메일"></td>
+						placeholder="ex) kh@kh.com" value="${ sessionScope.loginMember.email }"></td>
 				</tr>
 				
 	

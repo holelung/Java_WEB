@@ -20,7 +20,7 @@ public class MyPageController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/WEB-INF/views/member/my_page.jsp").forward(request, response);
 	}
 
 

@@ -53,7 +53,7 @@
 		
 			<c:otherwise>
 				<li class="nav-item">
-		          <a class="nav-link" href="#">내정보</a>
+		          <a class="nav-link" href="my-page">내정보</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" href="logout">로그아웃</a>

@@ -79,7 +79,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="/home">
+      <a class="navbar-brand" href="/mfw">
       	<img class="img-fluid" src="https://www.kh-academy.co.kr/resources/images/main/logo.svg" alt="로고없음" style="width:130px; height:50px;" />
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -90,7 +90,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/home">HOME</a>
+            <a class="nav-link js-scroll-trigger" href="/mfw">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#">공지사항</a>
