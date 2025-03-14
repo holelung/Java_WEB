@@ -36,7 +36,10 @@ header {
 }
 .title {
   margin: 10px 20px;
+  cursor: pointer;
+  user-select: none;
 }
+
 
 .nav-items {
   display: flex;

@@ -26,7 +26,7 @@
 <!-- header section -->
   <header>
     <div class="title">
-      <a class="navbar-brand">TITLE</a>
+      <a class="navbar-brand logo" href="/swp">TITLE</a>
     </div>
     <nav class="navbar">
       <ul class="nav-items">
