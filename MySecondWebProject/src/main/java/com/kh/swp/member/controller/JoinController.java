@@ -8,12 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/sign-up")
-public class SignUpController extends HttpServlet {
+@WebServlet("/join")
+public class JoinController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
-    public SignUpController() {
+    public JoinController() {
         super();
 
     }
@@ -21,13 +20,12 @@ public class SignUpController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		request.getRequestDispatcher("/WEB-INF/views/member/signup_form.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		doGet(request, response);
 	}
 

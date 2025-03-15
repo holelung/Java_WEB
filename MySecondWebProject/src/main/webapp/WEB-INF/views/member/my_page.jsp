@@ -24,7 +24,7 @@
 	<jsp:include page="../include/header.jsp" />
 	
 	<div style="width : 80%; margin : auto; padding : 50px;">
-		<form action="수정매핑" name="signup" id="signUpForm" method="post"
+		<form action="update-info" name="signup" id="signUpForm" method="post"
 						style="margin-bottom: 0;">
 			<table
 				style="cellpadding: 0; cellspacing: 0; margin: 0 auto; width: 100%">
@@ -38,7 +38,7 @@
 						class="form-control tooltipstered" maxlength="14"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						value="${ sessionScope.loginMember.memberId }" readonly>
+						value="${ sessionScope.signinMember.memberId }" readonly>
 						</td>
 					
 				</tr>
@@ -53,7 +53,7 @@
 						class="form-control tooltipstered" maxlength="6"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						placeholder="한글로 최대 6자" value="${ sessionScope.loginMember.memberName }"></td>
+						placeholder="한글로 최대 6자" value="${ sessionScope.signinMember.memberName }"></td>
 				</tr>
 				
 				<tr>
@@ -66,7 +66,7 @@
 						class="form-control tooltipstered" 
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						placeholder="ex) kh@kh.com" value="${ sessionScope.loginMember.email }"></td>
+						placeholder="ex) kh@kh.com" value="${ sessionScope.signinMember.email }"></td>
 				</tr>
 				
 	
@@ -117,7 +117,7 @@
 	      </div>
 	
 	      <div class="modal-body">
-	        <form action="삭제요청 매핑값" method="post">
+	        <form action="delete-member" method="post">
 	        
 			  <div class="form-group">
 			    <label for="userPwd" style="font-size:12px; color:red">탈퇴를 원하신다면 비밀번호를 입력해주세요.</label>
@@ -161,7 +161,7 @@
 	
 	
 	      <div class="modal-body">
-	        <form action="비밀번호 수정 매핑값" method="post">
+	        <form action="update-pwd" method="post">
 	        
 			  <div class="form-group">
 			    <label for="userPwd">현재 비밀번호 :</label>

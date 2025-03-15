@@ -22,7 +22,7 @@
 	<jsp:include page="../include/header.jsp" />
 	
 	<div style="width : 80%; margin : auto; padding : 50px;">
-		<form action="sign-up" name="signup" id="signUpForm" method="post"
+		<form action="join" name="signup" id="signUpForm" method="post"
 						style="margin-bottom: 0;">
 			<table
 				style="cellpadding: 0; cellspacing: 0; margin: 0 auto; width: 100%">

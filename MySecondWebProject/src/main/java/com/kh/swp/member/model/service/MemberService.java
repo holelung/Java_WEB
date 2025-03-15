@@ -2,6 +2,9 @@ package com.kh.swp.member.model.service;
 
 import java.sql.Connection;
 
+import org.apache.ibatis.session.SqlSession;
+
+import static com.kh.swp.common.Template.getSqlSession;
 import com.kh.swp.member.model.dao.MemberDAO;
 import com.kh.swp.member.model.dto.MemberDTO;
 import com.kh.swp.util.JdbcUtil;
@@ -11,8 +14,17 @@ public class MemberService {
 	
 	public MemberDTO signin(MemberDTO member) {
 		
-		MemberDAO memberDao = new MemberDAO();
-		Connection conn = JdbcUtil.getConnect();
+		SqlSession sqlSession = getSqlSession();
+		
+		// 유효성 검증
+		// 1) ID = 영어, 숫자를 포함한 4-10길이의 문자열 받았는지
+		// 2) PWD = 영어, 숫자, 특수문자를 포함한 최소 8길이의 문자열
+		if(!member.getMemberId().matches("^[a-zA-Z0-9]{4,15}$")) {
+			return null;
+		}
+		if(!member.getMemberPw().matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {
+			return null;
+		}
 		
 		return new MemberDAO().signin( JdbcUtil.getConnect(), member);
 		
