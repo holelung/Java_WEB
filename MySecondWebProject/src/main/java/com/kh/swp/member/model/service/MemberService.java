@@ -19,7 +19,7 @@ public class MemberService {
 		// 유효성 검증
 		// 1) ID = 영어, 숫자를 포함한 4-10길이의 문자열 받았는지
 		// 2) PWD = 영어, 숫자, 특수문자를 포함한 최소 8길이의 문자열
-		if(!member.getMemberId().matches("^[a-zA-Z0-9]{4,15}$")) {
+		if(!member.getMemberId().matches("^[a-zA-Z0-9]{4,10}$")) {
 			return null;
 		}
 		if(!member.getMemberPw().matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {

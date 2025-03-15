@@ -168,7 +168,7 @@
 								class="form-control tooltipstered" maxlength="10"
 								required="required" aria-required="true"
 								style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-								placeholder="최대 15자"></td>
+								placeholder="최대 10자"></td>
 						</tr>
 						<tr>
 							<td style="text-align: left">

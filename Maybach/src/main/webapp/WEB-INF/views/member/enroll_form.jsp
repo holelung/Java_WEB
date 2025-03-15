@@ -36,7 +36,7 @@
 						class="form-control tooltipstered" maxlength="14"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
-						placeholder="숫자와 영어로 4-15자">
+						placeholder="숫자와 영어로 4-10자">
 						</td>
 					
 				</tr>
