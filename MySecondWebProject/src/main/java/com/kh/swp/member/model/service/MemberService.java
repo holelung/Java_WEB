@@ -61,4 +61,28 @@ public class MemberService {
 		return result;
 	}
 	
+	public int updateInfo(MemberDTO member) {
+		
+		SqlSession sqlSession = getSqlSession();
+		
+		if(!member.getMemberName().matches("^[가-힣]{1,6}$")) {
+			return 2;
+		}
+		if(!member.getEmail().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+			return 3;
+		}
+		
+		int result = new MemberDAO().updateInfo(sqlSession, member);
+		sqlSession.close();
+		return result;
+	}
+	
+	public MemberDTO selectMember(String memberId) {
+		SqlSession sqlSession = getSqlSession();
+		MemberDTO result = new MemberDAO().selectMember(sqlSession,memberId);
+		
+		sqlSession.close();
+		return result;
+	}
+	
 }

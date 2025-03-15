@@ -30,4 +30,14 @@ public class MemberDAO {
 		
 		return sqlSession.insert("join", member);
 	}
+	
+	public int updateInfo(SqlSession sqlSession, MemberDTO member) {
+		
+		return sqlSession.update("updateInfo", member);
+	}
+	
+	public MemberDTO selectMember(SqlSession sqlSession, String memberId) {
+		
+		return sqlSession.selectOne("selectMember", memberId);
+	}
 }

@@ -30,6 +30,13 @@
 	  <c:remove var="joinMessage" scope="session"/>
 	</c:if>
 	
+	<c:if test="${ not empty sessionScope.updateMessage }">
+	  <script>
+	  		alert('${ sessionScope.updateMessage }');
+	  </script>
+	  <c:remove var="updateMessage" scope="session"/>
+	</c:if>
+	
 <!-- header section -->
   <header>
     <div class="title">

@@ -34,7 +34,7 @@
 					</td>							
 				</tr>
 				<tr>
-					<td><input type="text" name="userId" id="user_id"
+					<td><input type="text" name="memberId" id="user_id"
 						class="form-control tooltipstered" maxlength="14"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
@@ -49,7 +49,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="" id="user_name"
+					<td><input type="text" name="memberName" id="user_name"
 						class="form-control tooltipstered" maxlength="6"
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
@@ -62,11 +62,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><input type="email" name="" id="user_email"
+					<td><input type="email" name="email" id="user_email"
 						class="form-control tooltipstered" 
 						required="required" aria-required="true"
 						style="margin-bottom: 25px; width: 100%; height: 40px; border: 1px solid #d9d9de"
 						placeholder="ex) kh@kh.com" value="${ sessionScope.signInMember.email }"></td>
+					<td style="display:none;">
+					<input type="date" name="enrollDate" value="${ sessionScope.signInMember.enrollDate }">	
+					</td>
 				</tr>
 				
 	

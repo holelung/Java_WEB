@@ -56,6 +56,19 @@
 			MEMBER_ID = #{ memberId }
 	</update>
 	
+	<select id="selectMember"
+			parameterType="string"
+			resultType="MemberDTO">
+		SELECT
+			MEMBER_ID memberId, 
+			MEMBER_NAME memberName, 
+			EMAIL email, 
+			ENROLL_DATE enrollDate
+		FROM
+			KH_MEMBER
+		WHERE
+			MEMBER_ID = #{ memberId }
+	</select>
 	
 	
 	<!-- 비밀번호 변경 -->
