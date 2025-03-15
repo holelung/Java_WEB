@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.kh.swp.member.model.dto.MemberDTO" alias="MemberDTO"/>
+	</typeAliases>
+
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="MANAGED"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@112.221.156.34:12345:XE"/>
+				<property name="name" value="KH19_JJH"/>
+				<property name="passwd" value="KH1234"/>				
+			</dataSource>	
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mappers/member-mapper.xml"/>
+	</mappers>
+	
+
+</configuration>

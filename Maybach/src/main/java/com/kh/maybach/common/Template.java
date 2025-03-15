@@ -18,7 +18,7 @@ public class Template {
 		SqlSession sqlSession = null;
 		
 		try {
-			InputStream stream = Resources.getResourceAsStream("/mybatis-config.xml");
+			InputStream stream = Resources.getResourceAsStream("/mybatis-confing.xml");
 			
 			// 1단계 : SqlSessionFactoryBuilder 객체 생성
 			//        그냥 생성자 호출하믄됨
@@ -26,8 +26,6 @@ public class Template {
 			// 		  build(입력스트림) 스트림으로부터 환경설정파일의 값을 읽어오면서 SqlSessionFactory객체생성
 			// 3단계 : SqlSession 객체 생성
 			sqlSession = new SqlSessionFactoryBuilder().build(stream).openSession();
-			
-			
 			
 		} catch (IOException e) {
 			e.printStackTrace();

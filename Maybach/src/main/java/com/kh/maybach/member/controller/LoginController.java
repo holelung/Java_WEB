@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
 		MemberDTO loginMember = new MemberService().login(member);
 		
 		if(loginMember == null) {
-			response.sendRedirect("/mfw");
+			response.sendRedirect(request.getContextPath());
 			return;
 		}
 		

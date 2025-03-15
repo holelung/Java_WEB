@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kh.maybach.member.model.dto.MemberDTO;
 import com.kh.maybach.member.model.service.MemberService;
@@ -48,6 +49,12 @@ public class SignupController extends HttpServlet {
 //			// 성공했을 경우 => 웰컴페이지로 이동
 //			response.sendRedirect(request.getContextPath());
 //		}
+		// 실패 메시지 보내기 위한방법으로 사용할 수 없음
+//		request.setAttribute("message", "중복된 아이디가 존재합니다. 다른 아이디를 입력해주세요");
+		if(result == 0) {
+			request.getSession().setAttribute("message", "중복된 아이디가 존재합니다. 다른 아이디를 입력해주세요");
+		}
+		
 		response.sendRedirect(result != 0 ? path : path + "/join");
 		
 	}

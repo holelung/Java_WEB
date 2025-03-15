@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="memberMapper">
+	
+	<!-- 로그인 -->
+	<select id="login"
+			resultType="MemberDTO"
+			parameterType="MemberDTO">
+		SELECT
+			MEMBER_ID memberId, 
+			MEMBER_NAME memberName, 
+			EMAIL email, 
+			ENROLL_DATE enrollDate
+		FROM
+			KH_MEMBER
+		WHERE
+			MEMBER_ID = #{ memberId }
+		AND
+ 			MEMBER_PW = #{ memberPw }		
+	</select>
+
+	<!-- 중복검사 -->
+	<select id="checkId"
+			parameterType="string"
+			resultType="_int">
+		SELECT
+			COUNT(*)
+		FROM
+			KH_MEMBER
+		WHERE
+			MEMBER_ID = #{ memberId }
+	</select>
+	
+	
+	<!-- 회원가입 -->
+	<insert id="signUp"
+			parameterType="MemberDTO">
+		INSERT INTO 
+			KH_MEMBER
+		VALUES
+			(#{ memberId }, #{ memberPw }, #{ memberName }, #{ email }, #{ enrollDate })	
+	</insert>
+
+	<!-- 정보수정 -->
+	<update id="updateInfo"
+			parameterType="MemberDTO">
+		UPDATE
+			KH_MEMBER
+		SET
+			MEMBER_NAME = #{ memberName },
+			EMAIL = #{ email }
+		WHERE
+			MEMBER_ID = #{ memberId }
+	</update>
+	
+	
+	
+	<!-- 비밀번호 변경 -->
+	<update id="updatePwd"
+			parameterType="MemberDTO">
+		UPDATE
+			KH_MEMBER
+		SET
+			MEMBER_PW = #{ memberPw }
+		WHERE 
+			MEMBER_ID = #{ memberId }
+	
+	</update>
+	
+	<select id="checkPwd"
+			parameterType="MemberDTO"
+			resultType="_int">
+		SELECT
+			COUNT(*)
+		FROM
+			KH_MEMBER
+		WHERE
+			MEMBER_ID = #{ memberId }
+		AND
+ 			MEMBER_PW = #{ memberPw }
+	</select>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="deletMember"
+			parameterType="string">
+		DELETE FROM 
+			KH_MEMBER
+		WHERE
+			MEMBER_ID = #{ memberId }
+	</delete>
+	
+</mapper>
+
