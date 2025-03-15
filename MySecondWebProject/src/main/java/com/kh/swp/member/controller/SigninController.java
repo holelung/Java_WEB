@@ -30,11 +30,11 @@ public class SigninController extends HttpServlet {
 		member.setMemberId(request.getParameter("memberId"));
 		member.setMemberPw(request.getParameter("memberPw"));
 		
-		MemberDTO signinMember = new MemberService().signin(member);
+		MemberDTO signInMember = new MemberService().signin(member);
 		
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("signinMember", signinMember);
+		session.setAttribute("signInMember", signInMember);
 		
 		response.sendRedirect(request.getContextPath());
 	}

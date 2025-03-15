@@ -22,12 +22,13 @@ public class MemberService {
 		if(!member.getMemberId().matches("^[a-zA-Z0-9]{4,10}$")) {
 			return null;
 		}
-		if(!member.getMemberPw().matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {
-			return null;
-		}
+//		if(!member.getMemberPw().matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {
+//			return null;
+//		}
+		// 제약조건 지켜서 만든 유저정보가 없어서 패스..
 		
-		return new MemberDAO().signin( JdbcUtil.getConnect(), member);
 		
+		return new MemberDAO().signIn(sqlSession, member);
 		
 	}
 }

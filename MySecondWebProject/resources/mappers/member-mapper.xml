@@ -6,7 +6,7 @@
 <mapper namespace="memberMapper">
 	
 	<!-- 로그인 -->
-	<select id="login"
+	<select id="signIn"
 			resultType="MemberDTO"
 			parameterType="MemberDTO">
 		SELECT

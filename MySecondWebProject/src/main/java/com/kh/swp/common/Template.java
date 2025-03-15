@@ -14,7 +14,7 @@ public class Template {
 		SqlSession sqlSession = null;
 		
 		try {
-			InputStream stream = Resources.getResourceAsStream("/mybatis-confing.xml");
+			InputStream stream = Resources.getResourceAsStream("/mybatis-config.xml");
 			
 			sqlSession = new SqlSessionFactoryBuilder().build(stream).openSession();
 			

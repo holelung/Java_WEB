@@ -42,7 +42,7 @@
 
 
 		<c:choose>
-			<c:when test="${ empty signinMember }">
+			<c:when test="${ empty signInMember }">
 			    <li class="nav-item">
 		          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#log-in">SignIn</a>
 		        </li>
