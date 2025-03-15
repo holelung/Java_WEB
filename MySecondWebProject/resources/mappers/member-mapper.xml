@@ -36,12 +36,12 @@
 	
 	
 	<!-- 회원가입 -->
-	<insert id="signUp"
+	<insert id="join"
 			parameterType="MemberDTO">
 		INSERT INTO 
 			KH_MEMBER
-		VALUES
-			(#{ memberId }, #{ memberPw }, #{ memberName }, #{ email }, #{ enrollDate })	
+		VALUES 
+		( #{memberId}, #{memberPw}, #{memberName}, #{email}, DEFAULT )
 	</insert>
 
 	<!-- 정보수정 -->

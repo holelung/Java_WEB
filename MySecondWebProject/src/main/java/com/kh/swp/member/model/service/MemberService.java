@@ -27,8 +27,38 @@ public class MemberService {
 //		}
 		// 제약조건 지켜서 만든 유저정보가 없어서 패스..
 		
+		MemberDTO result = new MemberDAO().signIn(sqlSession, member);
+		sqlSession.close();
 		
-		return new MemberDAO().signIn(sqlSession, member);
-		
+		return result;
 	}
+	
+	
+	public int join(MemberDTO member) {
+		
+		SqlSession sqlSession = getSqlSession();
+		// 유효성 검증
+		if(!member.getMemberId().matches("^[a-zA-Z0-9]{4,10}$")) {
+			return 2;
+		}
+		if(!member.getMemberPw().matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {
+			return 3;
+		}
+		if(!member.getMemberName().matches("^[가-힣]{1,6}$")) {
+			return 4;
+		}
+		if(!member.getEmail().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+			return 5;
+		}
+		
+		if(new MemberDAO().checkId(sqlSession, member.getMemberId()) != 0) {
+			return 0;
+		}
+		
+		int result = new MemberDAO().join(sqlSession, member);
+		
+		sqlSession.close();
+		return result;
+	}
+	
 }

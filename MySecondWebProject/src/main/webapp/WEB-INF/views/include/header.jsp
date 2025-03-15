@@ -23,6 +23,13 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
+ 	<c:if test="${ not empty sessionScope.joinMessage }">
+	  <script>
+	  		alert('${ sessionScope.joinMessage }');
+	  </script>
+	  <c:remove var="joinMessage" scope="session"/>
+	</c:if>
+	
 <!-- header section -->
   <header>
     <div class="title">
@@ -44,10 +51,10 @@
 		<c:choose>
 			<c:when test="${ empty signInMember }">
 			    <li class="nav-item">
-		          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#log-in">SignIn</a>
+		          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#log-in">로그인</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="sign-up">SignUp</a>
+		          <a class="nav-link" href="sign-up">회원가입</a>
 		        </li>
 			</c:when>
 		

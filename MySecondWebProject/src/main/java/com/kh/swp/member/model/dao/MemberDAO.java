@@ -13,9 +13,6 @@ import com.kh.swp.util.JdbcUtil;
 
 public class MemberDAO {
 	
-	
-	
-	
 
 	
 	public MemberDTO signIn(SqlSession sqlSession, MemberDTO member) {
@@ -23,4 +20,14 @@ public class MemberDAO {
 		return sqlSession.selectOne("signIn", member);
 	}
 
+	
+	public int checkId(SqlSession sqlSession, String memberId) {
+		
+		return sqlSession.selectOne("checkId", memberId);
+	}
+	
+	public int join(SqlSession sqlSession, MemberDTO member) {
+		
+		return sqlSession.insert("join", member);
+	}
 }
