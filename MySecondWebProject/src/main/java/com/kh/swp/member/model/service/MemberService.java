@@ -85,4 +85,41 @@ public class MemberService {
 		return result;
 	}
 	
+	
+	public int updatePwd(MemberDTO member, String changePwd) {
+		SqlSession sqlSession = getSqlSession();
+		
+		
+		
+		if(new MemberDAO().checkPwd(sqlSession, member) != 1) {
+			return 0;
+		}
+//		유효성 검사 테스트할때 귀찮아서 주석처리함
+//		if(!changePwd.matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {
+//			return 3;
+//		}
+		
+		member.setMemberPw(changePwd);
+		int result = new MemberDAO().updatePwd(sqlSession, member);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
+	public int deleteMember(MemberDTO member) {
+		SqlSession sqlSession = getSqlSession();
+		
+//		유효성 검사 테스트할때 귀찮아서 주석처리함
+//		if(!changePwd.matches("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$")) {
+//			return 3;
+//		}
+		
+		int result = new MemberDAO().deleteMember(sqlSession, member);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
 }

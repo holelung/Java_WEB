@@ -81,24 +81,24 @@
 				<tr>
 					<td style="width: 100%; text-align: center; colspan: 2;"><input
 						type="submit" value="정보수정" 
-						class="btn form-control tooltipstered" id="signup-btn"
+						class="btn form-control tooltipstered" id="updateInfoBtn"
 						style="background-color: #52b1ff; margin-top: 0; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8">
 					</td>
 				</tr>
 				<tr>
 					<td style="width: 100%; text-align: center; colspan: 2;"><input
 						type="button" value="비밀번호수정" 
-						class="btn form-control tooltipstered" id="signup-btn"
+						class="btn form-control tooltipstered" id="updatePwdBtn"
 						style="background-color: #52ffe9; margin-top: 0; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8"
-						data-toggle="modal" data-target="#updatePwd">
+						data-bs-toggle="modal" data-bs-target="#updatePwd">
 					</td>
 				</tr>
 				<tr>
 					<td style="width: 100%; text-align: center; colspan: 2;"><input
 						type="button" value="회원탈퇴" 
-						class="btn form-control tooltipstered" id="signup-btn"
+						class="btn form-control tooltipstered" id="deleteBtn"
 						style="background-color: #ff5352; margin-top: 0; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8"
-						data-toggle="modal" data-target="#deleteForm">
+						data-bs-toggle="modal" data-bs-target="#deleteForm">
 					</td>
 				</tr>
 			</table>
@@ -116,7 +116,7 @@
 	
 	      <div class="modal-header">
 	        <h4 class="modal-title" style="color:red;">회원 탈퇴</h4>
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	
 	      <div class="modal-body">
@@ -124,7 +124,8 @@
 	        
 			  <div class="form-group">
 			    <label for="userPwd" style="font-size:12px; color:red">탈퇴를 원하신다면 비밀번호를 입력해주세요.</label>
-			    <input type="password" name="userPwd" class="form-control" placeholder="비밀번호를 입력해주세요." id="deletePwd" required>
+			    <input type="password" name="memberPw" class="form-control" placeholder="비밀번호를 입력해주세요." id="deletePwd" required>
+			    <input type="text" name="memberId" style="display:none;" value="${ sessionScope.signInMember.memberId }">
 			  </div>
 			  
 			  <button type="submit" class="btn btn-danger" onclick="return deleteMember();">회원탈퇴</button>
@@ -159,7 +160,7 @@
 	
 	      <div class="modal-header">
 	        <h4 class="modal-title">비밀번호 변경</h4>
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	
 	

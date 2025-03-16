@@ -40,4 +40,23 @@ public class MemberDAO {
 		
 		return sqlSession.selectOne("selectMember", memberId);
 	}
+	
+	
+	public int checkPwd(SqlSession sqlSession, MemberDTO member) {
+		
+		return sqlSession.selectOne("checkPwd", member);
+	}
+	
+	public int updatePwd(SqlSession sqlSession, MemberDTO member) {
+		
+		return sqlSession.update("updatePwd", member);
+	}
+	
+	public int deleteMember(SqlSession sqlSession, MemberDTO member) {
+		
+		return sqlSession.delete("deleteMember", member);
+		
+	}
 }
+
+
