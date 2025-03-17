@@ -23,8 +23,7 @@
         <h2 align="center">게시글 수정하기</h2>
         <br><br> 
 
-        <form action="update.board" method="post" id="update-form"
-        	  enctype="multipart/form-data">
+        <form action="update.board" method="post" id="update-form">
         	
         	<div class="form-group">
 	        	<select name="category" class="form-control">

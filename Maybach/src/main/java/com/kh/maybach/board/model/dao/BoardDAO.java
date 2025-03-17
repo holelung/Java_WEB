@@ -37,4 +37,8 @@ public class BoardDAO {
 	public BoardDTO getUpdateForm(SqlSession sqlSession, BoardDTO board) {
 		return sqlSession.selectOne("boardMapper.getUpdateForm", board);
 	}
+	
+	public int updateBoard(SqlSession sqlSession, BoardDTO board) {
+		return sqlSession.update("boardMapper.updateBoard", board);
+	}
 }

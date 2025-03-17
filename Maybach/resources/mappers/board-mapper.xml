@@ -92,4 +92,15 @@
 			MEMBER_ID = #{ boardWriter }
 	</select>
 	
+	<update id="updateBoard"
+			parameterType="BoardDTO">
+		UPDATE 
+			KH_BOARD
+		SET
+			BOARD_TITLE = #{ boardTitle },
+			BOARD_CONTENT = #{ boardContent }
+		WHERE
+			BOARD_NO = #{ boardNo }
+	</update>
+	
  </mapper>

@@ -52,7 +52,8 @@ public class BoardUpdateFormController extends HttpServlet {
 			response.sendRedirect("board?boardNo="+boardNo);
 			return;
 		}
-		request.setAttribute("board", result);	
+		request.setAttribute("board", result);
+		session.setAttribute("updateBoardNo", result.getBoardNo());
 		
 		request.getRequestDispatcher("WEB-INF/views/board/update_form.jsp").forward(request, response);
 	}

@@ -113,7 +113,6 @@ public class BoardService {
 	public BoardDTO getUpdateForm(BoardDTO board) {
 		SqlSession sqlSession = getSqlSession();
 		
-		// 글쓴이와 Session 아이디의 값이 맞는지 확인
 		BoardDTO result = boardDao.getUpdateForm(sqlSession, board);
 
 		sqlSession.close();
@@ -121,6 +120,18 @@ public class BoardService {
 		return result;
 	}
 	
+	public int updateBoard(BoardDTO board) {
+		SqlSession sqlSession = getSqlSession();
+		System.out.println(board);
+		int result = boardDao.updateBoard(sqlSession, board);
+		
+		if(result != 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		
+		return result;
+	}
 		
 	
 	
