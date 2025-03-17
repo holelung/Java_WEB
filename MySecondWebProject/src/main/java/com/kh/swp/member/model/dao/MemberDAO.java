@@ -17,44 +17,44 @@ public class MemberDAO {
 	
 	public MemberDTO signIn(SqlSession sqlSession, MemberDTO member) {
 		
-		return sqlSession.selectOne("signIn", member);
+		return sqlSession.selectOne("memberMapper.signIn", member);
 	}
 
 	
 	public int checkId(SqlSession sqlSession, String memberId) {
 		
-		return sqlSession.selectOne("checkId", memberId);
+		return sqlSession.selectOne("memberMapper.checkId", memberId);
 	}
 	
 	public int join(SqlSession sqlSession, MemberDTO member) {
 		
-		return sqlSession.insert("join", member);
+		return sqlSession.insert("memberMapper.join", member);
 	}
 	
 	public int updateInfo(SqlSession sqlSession, MemberDTO member) {
 		
-		return sqlSession.update("updateInfo", member);
+		return sqlSession.update("memberMapper.updateInfo", member);
 	}
 	
 	public MemberDTO selectMember(SqlSession sqlSession, String memberId) {
 		
-		return sqlSession.selectOne("selectMember", memberId);
+		return sqlSession.selectOne("memberMapper.selectMember", memberId);
 	}
 	
 	
 	public int checkPwd(SqlSession sqlSession, MemberDTO member) {
 		
-		return sqlSession.selectOne("checkPwd", member);
+		return sqlSession.selectOne("memberMapper.checkPwd", member);
 	}
 	
 	public int updatePwd(SqlSession sqlSession, MemberDTO member) {
 		
-		return sqlSession.update("updatePwd", member);
+		return sqlSession.update("memberMapper.updatePwd", member);
 	}
 	
 	public int deleteMember(SqlSession sqlSession, MemberDTO member) {
 		
-		return sqlSession.delete("deleteMember", member);
+		return sqlSession.delete("memberMapper.deleteMember", member);
 		
 	}
 }

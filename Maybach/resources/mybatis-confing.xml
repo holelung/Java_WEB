@@ -7,6 +7,7 @@
 	<!-- typeAliases : 별칭 등록 -->
 	<typeAliases>
 		<typeAlias alias="MemberDTO" type="com.kh.maybach.member.model.dto.MemberDTO"/>
+		<typeAlias alias="BoardDTO" type="com.kh.maybach.board.model.dto.BoardDTO"/>
 	</typeAliases>
 	
 	<!-- 
@@ -43,6 +44,7 @@
 	<!-- mappers : 실행할 SQL문을 기록해둔 mapper파일을 등록 -->
 	<mappers>
 		<mapper resource="mappers/member-mapper.xml"/>
+		<mapper resource="mappers/board-mapper.xml"/>
 	</mappers>
 	
 
