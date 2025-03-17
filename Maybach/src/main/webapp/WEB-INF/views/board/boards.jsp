@@ -46,24 +46,25 @@ tr:hover{
 	                <c:forEach var="board" items="${ map.boards }">
                     <tr style="color: #52b1ff;"
                         class="board"
-                        id="${ board.boardNo }">
+                        id="${ board.boardNo }"
+                        onclick="goTo(${ board.boardNo });">
                         <td>
-                        ${ board.boardNo }
+                        	${ board.boardNo }
                         </td>
                         <td>
-                        ${ board.boardCategory }
+                        	${ board.boardCategory }
                         </td>
                         <td>
-                        ${ board.boardWriter }
+                       	 ${ board.boardWriter }
                         </td>
                         <td style="color: #52d6ffcc;">
-                        ${ board.boardTitle } &nbsp;
+                        	${ board.boardTitle } &nbsp;
                         </td>
                         <td>
-                        ${ board.createDate }
+                        	${ board.createDate }
                         </td>
                         <td>
-                        ${ board.count }
+                       		${ board.count }
                         </td>
                     </tr>    
 			        </c:forEach>
@@ -73,6 +74,14 @@ tr:hover{
             </div>            
          </div>
       </div>
+      <script>
+      	const goTo = (no) =>{
+			//console.log(e)
+      		location.href= `board?boardNo=\${no}`;
+		}
+      </script>
+      
+      
          <div class="paging-area" align="center" >
         	
         		<c:if test="${ map.page > 1 }">

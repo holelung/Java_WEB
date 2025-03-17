@@ -87,4 +87,28 @@ public class BoardService {
 		return map;
 	}
 
+	public BoardDTO findByBoardNo(int boardNo) {
+		
+		SqlSession sqlSession = getSqlSession();
+		
+		// 최대 두 번 가야함
+		// 조회수 증가 로직 한번 		==> UPDATE / COMMIT
+		// 게시글 정보 조회 로직 한 번	==> SELECT
+		
+		// UPDATE
+		int updateResult = boardDao.increaseCount(sqlSession, boardNo);
+		// boardDao.셀렉트();
+		if(updateResult == 0) {
+			return null;
+		}
+		
+		BoardDTO board = boardDao.findByBoardNo(sqlSession, boardNo);
+		if(board != null) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return board;
+	}
+	
+	
 }

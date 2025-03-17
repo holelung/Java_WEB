@@ -19,16 +19,22 @@
 			)
 	</insert>
 
+	<!-- mybatis에서 중복제거 방법 -->
+	<sql id="boardColumns">
+		SELECT
+				BOARD_NO boardNo,	
+				BOARD_CATEGORY boardCategory,
+				MEMBER_NAME boardWriter,
+				BOARD_TITLE boardTitle,
+				CREATE_DATE createDate,
+				COUNT count
+				
+	</sql>
+
 
 	<select id="selectBoards"
 			resultType="boardDTO">
-	 	SELECT
-			BOARD_NO boardNo,	
-			BOARD_CATEGORY boardCategory,
-			MEMBER_NAME boardWriter,
-			BOARD_TITLE boardTitle,
-			CREATE_DATE createDate,
-			COUNT count
+	 	<include refid="boardColumns"/>
 		FROM 
 			KH_BOARD 
 		JOIN 
@@ -43,6 +49,31 @@
 			COUNT(*)
 		FROM
 			KH_BOARD
+	</select>
+	
+	<update id="increaseCount"
+			parameterType="_int">
+		UPDATE 
+			KH_BOARD
+		SET
+			COUNT = COUNT + 1
+		WHERE
+			BOARD_NO = #{ boardNo }
+	</update>
+
+
+	
+	<select id="findByBoardNo"
+			parameterType="_int"
+			resultType="BoardDTO">
+		<include refid="boardColumns"/>
+			, BOARD_CONTENT boardContent
+		FROM 
+			KH_BOARD 
+		JOIN 
+			KH_MEMBER ON (BOARD_WRITER = MEMBER_ID)
+		WHERE
+			BOARD_NO = #{ boardNo }
 	</select>
 	
 	

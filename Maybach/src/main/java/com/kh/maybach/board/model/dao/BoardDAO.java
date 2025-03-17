@@ -26,4 +26,12 @@ public class BoardDAO {
 		return sqlSession.selectOne("boardMapper.selectBoardCount");
 	}
 	
+	public int increaseCount(SqlSession sqlSession, int boardNo) {
+		return sqlSession.update("boardMapper.increaseCount", boardNo);
+	}
+	
+	public BoardDTO findByBoardNo(SqlSession sqlSession, int boardNo) {
+		return sqlSession.selectOne("boardMapper.findByBoardNo", boardNo);
+	}
+	
 }
