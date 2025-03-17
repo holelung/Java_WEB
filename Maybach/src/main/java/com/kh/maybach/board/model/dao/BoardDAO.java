@@ -34,4 +34,7 @@ public class BoardDAO {
 		return sqlSession.selectOne("boardMapper.findByBoardNo", boardNo);
 	}
 	
+	public BoardDTO getUpdateForm(SqlSession sqlSession, BoardDTO board) {
+		return sqlSession.selectOne("boardMapper.getUpdateForm", board);
+	}
 }

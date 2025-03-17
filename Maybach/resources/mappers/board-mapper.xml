@@ -77,4 +77,19 @@
 	</select>
 	
 	
+	<select id="getUpdateForm"
+			parameterType="BoardDTO"
+			resultType="BoardDTO">
+		<include refid="boardColumns"/>
+			,  BOARD_CONTENT boardContent
+		FROM
+			KH_BOARD
+		JOIN
+			KH_MEMBER ON (BOARD_WRITER = MEMBER_ID)
+		WHERE
+			BOARD_NO = #{ boardNo }
+		AND
+			MEMBER_ID = #{ boardWriter }
+	</select>
+	
  </mapper>

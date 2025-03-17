@@ -66,13 +66,13 @@
 		          
 			          <a 
 			            class="btn" 
-			            href="수정요청 매핑값"
+			            href="update.form?boardNo=${ board.boardNo }&boardWriter=${ board.boardWriter }"
 			      		style="background-color: orange; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8"
 			      		>수정</a>&nbsp;&nbsp;
 			          
 			          <a 
 			            class="btn" 
-			            href="삭제하기" onclick="return confirm('정말로 삭제하시겠습니까?')"
+			            href="delete.board" onclick="return confirm('정말로 삭제하시겠습니까?')"
 			      		style="background-color: red; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8"
 			      		>삭제</a>&nbsp;&nbsp;
 
