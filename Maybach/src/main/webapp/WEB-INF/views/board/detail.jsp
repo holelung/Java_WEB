@@ -72,7 +72,7 @@
 			          
 			          <a 
 			            class="btn" 
-			            href="delete.board" onclick="return confirm('정말로 삭제하시겠습니까?')"
+			            href="delete.board?boardNo=${ board.boardNo }" onclick="return confirm('정말로 삭제하시겠습니까?')"
 			      		style="background-color: red; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8"
 			      		>삭제</a>&nbsp;&nbsp;
 

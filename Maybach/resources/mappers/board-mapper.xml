@@ -92,6 +92,20 @@
 			MEMBER_ID = #{ boardWriter }
 	</select>
 	
+	<select id="checkBoard"
+			parameterType="BoardDTO"
+			resultType="_int">
+		SELECT
+			COUNT(*)
+		FROM
+			KH_BOARD
+		WHERE
+			BOARD_NO = #{ boardNo }
+		AND
+			BOARD_WRITER = #{ boardWriter }
+	
+	</select>
+	
 	<update id="updateBoard"
 			parameterType="BoardDTO">
 		UPDATE 
@@ -102,5 +116,18 @@
 		WHERE
 			BOARD_NO = #{ boardNo }
 	</update>
+	
+	
+	<delete id="deleteBoard"
+			parameterType="BoardDTO">
+		DELETE
+		FROM 
+			KH_BOARD
+		WHERE
+			BOARD_NO = #{ boardNo }
+		AND
+			BOARD_WRITER = #{ boardWriter }
+		
+	</delete>
 	
  </mapper>

@@ -122,7 +122,7 @@ public class BoardService {
 	
 	public int updateBoard(BoardDTO board) {
 		SqlSession sqlSession = getSqlSession();
-		System.out.println(board);
+		
 		int result = boardDao.updateBoard(sqlSession, board);
 		
 		if(result != 0) {
@@ -133,6 +133,23 @@ public class BoardService {
 		return result;
 	}
 		
+	public int deleteBoard(BoardDTO board) {
+		SqlSession sqlSession = getSqlSession();
+		
+		int check = boardDao.checkBoard(sqlSession, board);
+		if(check == 0) {
+			return 942;
+		}
+		
+		
+		int result = boardDao.deleteBoard(sqlSession, board);
+		if(result != 0) {
+			sqlSession.commit();
+		}	
+		sqlSession.close();
+		return result;
+	}
 	
+
 	
 }
