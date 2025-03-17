@@ -87,7 +87,7 @@ tr:hover{
         		<c:if test="${ map.page > 1 }">
 		        	<button 
 		       		class="btn btn-outline-primary" style="color:#52b1ff;"
-		       		onclick="location.href='boards?page=${ map.startBtn - 3 }'">이전</button>
+		       		onclick="location.href='boards?page=${ map.startBtn - map.btnLimit }'">이전</button>
 		        </c:if>
 				<c:forEach begin="${map.startBtn}" end="${map.endBtn}" var="i">
 					<button 
@@ -98,7 +98,7 @@ tr:hover{
 	        	<c:if test="${map.page < map.maxPage }">	
 		        	<button 
 		       		class="btn btn-outline-primary" style="color:#52b1ff;"
-		       		onclick="location.href='boards?page=${map.startBtn + 3}'">다음</button>
+		       		onclick="location.href='boards?page=${map.startBtn + map.btnLimit}'">다음</button>
 	        	</c:if>
         </div>
       

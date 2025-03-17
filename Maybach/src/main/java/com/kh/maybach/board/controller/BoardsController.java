@@ -28,7 +28,7 @@ public class BoardsController extends HttpServlet {
 		
 		Map<String, Object> map = new BoardService().selectBoards(page); 
 		request.setAttribute("map", map);
-		
+		request.getSession().setAttribute("currentPage", map.get("page"));
 		request.getRequestDispatcher("WEB-INF/views/board/boards.jsp").forward(request, response);
 	}
 

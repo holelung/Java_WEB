@@ -70,7 +70,7 @@ public class BoardService {
 		
 		// 나중일 -> 페이징 처리 이후
 		List<BoardDTO> boards = boardDao.selectBoards(sqlSession, rowBounds);
-		System.out.println(page);
+		
 		
 		sqlSession.close();
 		
