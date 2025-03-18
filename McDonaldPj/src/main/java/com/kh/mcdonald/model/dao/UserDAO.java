@@ -24,7 +24,7 @@ public class UserDAO {
 	public List<UserDTO> findAll(){
 		List<UserDTO> list = new ArrayList<UserDTO>();
 		
-		try(Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+		try(Connection conn = DriverManager.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement("""
 						SELECT USER_NO, USER_ID, USER_PW, USER_NAME, ENROLL_DATE FROM TB_USER ORDER BY ENROLL_DATE DESC
 						""");
