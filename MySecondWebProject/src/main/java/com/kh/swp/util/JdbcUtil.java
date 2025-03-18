@@ -20,7 +20,7 @@ public class JdbcUtil {
 
 
 	public static Connection getConnect() {
-		final String URL = "jdbc:oracle:thin:@112.221.156.34:12345:XE";
+		final String URL = "jdbc:oracle:thin:@";
 		final String USERNAME = "KH19_JJH";
 		final String PASSWORD = "KH1234";
 		
