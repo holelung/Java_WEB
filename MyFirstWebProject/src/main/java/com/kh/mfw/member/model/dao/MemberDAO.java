@@ -37,7 +37,7 @@ public class MemberDAO {
 		MemberDTO result = null;
 		
 		try{
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+			conn = DriverManager.getConnection("","KH19_JJH","KH1234");
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getMemberId());
@@ -102,7 +102,7 @@ public class MemberDAO {
 		ResultSet rset  = null;
 		int result = 1;
 		try {
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+			conn = DriverManager.getConnection("","KH19_JJH","KH1234");
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, memberId);
@@ -167,7 +167,7 @@ public class MemberDAO {
 					)
 				""";
 		try{
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@112.221.156.34:12345:XE","KH19_JJH","KH1234");
+			conn = DriverManager.getConnection("","KH19_JJH","KH1234");
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getMemberId());
